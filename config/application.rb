@@ -10,6 +10,7 @@ module PrjDentoloTest
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
+    config.active_job.queue_adapter = :sidekiq
 
     # Configuration for the application, engines, and railties goes here.
     #
@@ -18,5 +19,6 @@ module PrjDentoloTest
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    Dir["#{Rails.root}/lib/events/*.rb"].each { |file| require file }
   end
 end

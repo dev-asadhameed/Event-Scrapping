@@ -1,0 +1,2 @@
+class CoBerlin < Event
+end

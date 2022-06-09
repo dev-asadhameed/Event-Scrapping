@@ -1,0 +1,22 @@
+<table class='table table-striped table-hover'>
+  <thead>
+    <tr>
+      <th scope='col'>Event ID</th>
+      <th scope='col'>Event Name</th>
+      <th scope='col'>Start Date</th>
+      <th scope='col'>End Date</th>
+      <th scope='col'>Parent Site</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @events.find_each do |event| %>
+      <tr>
+        <th scope='row'><%= event.id %></th>
+        <td><%= event.name %></td>
+        <td><%= event.start_date&.strftime('%Y-%m-%d %H:%M') %></td>
+        <td><%= event.end_date&.strftime('%Y-%m-%d %H:%M') %></td>
+        <td><%= event.type %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

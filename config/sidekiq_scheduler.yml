@@ -1,0 +1,3 @@
+events_scrap_data:
+  cron: '*/1 * * * *'
+  class: EventsScrapDataJob

@@ -1,0 +1,2 @@
+class VisitBerlin < Event
+end
